@@ -45,7 +45,7 @@ function showQuestion() {
       } else {
         document.getElementById('feedback').textContent = `不正解... 正解は：${correctAnswer}`;
       }
-      setTimeout(nextQuestion, 1000);
+      setTimeout(nextQuestion, 1500);
     };
     optionsDiv.appendChild(btn);
   });
