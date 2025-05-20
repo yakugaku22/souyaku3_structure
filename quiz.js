@@ -75,6 +75,7 @@ function endQuiz() {
 function showResult() {
   document.getElementById('quiz-area').classList.add('hidden');
   document.getElementById('result').classList.remove('hidden');
+  document.getElementById('restart-btn').classList.remove('hidden');
   document.getElementById('result').textContent = `解いてくれてありがとう！${quizData.length}問中${score}問正解でした。`;
 }
 
@@ -94,3 +95,10 @@ function shuffleArray(array) {
   }
   return array;
 }
+
+function goToStart() {
+  document.getElementById('mode-select').classList.remove('hidden');
+  document.getElementById('result').classList.add('hidden');
+  document.getElementById('restart-btn').classList.add('hidden');
+}
+
