@@ -8,6 +8,7 @@
 </head>
 <body>
   <h1>構造式クイズ</h1>
+
   <div id="mode-select">
     <button onclick="startQuiz('name')">薬の名前を当てる</button>
     <button onclick="startQuiz('mechanism')">作用機序を当てる</button>
@@ -17,8 +18,14 @@
     <img id="structure-img" src="" alt="構造式">
     <div id="question"></div>
     <div id="options"></div>
+    
+    <div id="feedback" style="margin: 10px; color: #d2691e; font-weight: bold;"></div>
+
+    <button onclick="endQuiz()">ここで終了する</button>
     <button id="next-button" onclick="nextQuestion()">次の問題</button>
   </div>
+
+  <div id="result" class="hidden" style="margin-top:20px; font-weight: bold;"></div>
 
   <script src="quiz.js"></script>
 </body>
