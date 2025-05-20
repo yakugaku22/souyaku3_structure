@@ -1,11 +1,16 @@
 let quizData;
 let currentIndex = 0;
 let currentMode = 'name';
+let score = 0;
 
 function startQuiz(mode) {
   currentMode = mode;
+  score = 0;
+  currentIndex = 0;
   document.getElementById('mode-select').classList.add('hidden');
   document.getElementById('quiz-area').classList.remove('hidden');
+  document.getElementById('result').classList.add('hidden');
+  document.getElementById('feedback').textContent = "";
   fetch('quiz.json')
     .then(res => res.json())
     .then(data => {
@@ -27,12 +32,20 @@ function showQuestion() {
 
   const optionsDiv = document.getElementById('options');
   optionsDiv.innerHTML = '';
+  document.getElementById('feedback').textContent = '';
+
   options.forEach(option => {
     const btn = document.createElement('button');
     btn.textContent = option;
     btn.style.fontSize = "0.95rem";
     btn.onclick = () => {
-      alert(option === correctAnswer ? '正解！' : `不正解！正解は：${correctAnswer}`);
+      if (option === correctAnswer) {
+        document.getElementById('feedback').textContent = "正解！";
+        score++;
+      } else {
+        document.getElementById('feedback').textContent = `不正解... 正解は：${correctAnswer}`;
+      }
+      setTimeout(nextQuestion, 1000);
     };
     optionsDiv.appendChild(btn);
   });
@@ -43,9 +56,18 @@ function nextQuestion() {
   if (currentIndex < quizData.length) {
     showQuestion();
   } else {
-    alert('クイズ終了！最初に戻ります。');
-    location.reload();
+    showResult();
   }
+}
+
+function endQuiz() {
+  showResult();
+}
+
+function showResult() {
+  document.getElementById('quiz-area').classList.add('hidden');
+  document.getElementById('result').classList.remove('hidden');
+  document.getElementById('result').textContent = `お疲れ様でした！${quizData.length}問中${score}問正解でした。`;
 }
 
 function generateOptions(correct, all) {
