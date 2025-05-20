@@ -2,11 +2,13 @@ let quizData;
 let currentIndex = 0;
 let currentMode = 'name';
 let score = 0;
+let answered = false;
 
 function startQuiz(mode) {
   currentMode = mode;
   score = 0;
   currentIndex = 0;
+  answered = false;
   document.getElementById('mode-select').classList.add('hidden');
   document.getElementById('quiz-area').classList.remove('hidden');
   document.getElementById('result').classList.add('hidden');
@@ -33,19 +35,25 @@ function showQuestion() {
   const optionsDiv = document.getElementById('options');
   optionsDiv.innerHTML = '';
   document.getElementById('feedback').textContent = '';
+  answered = false;
 
   options.forEach(option => {
     const btn = document.createElement('button');
     btn.textContent = option;
     btn.style.fontSize = "0.95rem";
     btn.onclick = () => {
+      if (answered) return; // すでに答えていたら無効
+      answered = true;
+
       if (option === correctAnswer) {
         document.getElementById('feedback').textContent = "正解！";
         score++;
       } else {
         document.getElementById('feedback').textContent = `不正解... 正解は：${correctAnswer}`;
       }
-      setTimeout(nextQuestion, 1500);
+
+      // ボタン無効化
+      Array.from(optionsDiv.children).forEach(b => b.disabled = true);
     };
     optionsDiv.appendChild(btn);
   });
@@ -67,7 +75,7 @@ function endQuiz() {
 function showResult() {
   document.getElementById('quiz-area').classList.add('hidden');
   document.getElementById('result').classList.remove('hidden');
-  document.getElementById('result').textContent = `解いてくれてありがとう！${quizData.length}問中${score}問正解でした。テストがんばろう！`;
+  document.getElementById('result').textContent = `解いてくれてありがとう！${quizData.length}問中${score}問正解でした。`;
 }
 
 function generateOptions(correct, all) {
