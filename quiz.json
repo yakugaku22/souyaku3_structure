@@ -1,126 +1,126 @@
 [
   {
-    "image": "img/1.jpg",
+    "image": "img_1.jpg",
     "name": "ボグリボース",
     "mechanism": "α-グルコシダーゼ阻害薬"
   },
   {
-    "image": "img/2.jpg",
+    "image": "img_2.jpg",
     "name": "ナテグリニド",
     "mechanism": "グリニド系糖尿病治療薬"
   },
   {
-    "image": "img/3.jpg",
+    "image": "img_3.jpg",
     "name": "プロピルチオウラシル",
     "mechanism": "甲状腺機能亢進症治療薬"
   },
   {
-    "image": "img/4.jpg",
+    "image": "img_4.jpg",
     "name": "メトホルミン",
     "mechanism": "ビグアナイド系糖尿病治療薬"
   },
   {
-    "image": "img/5.jpg",
+    "image": "img_5.jpg",
     "name": "ジドロゲステロン",
     "mechanism": "黄体ホルモン薬"
   },
   {
-    "image": "img/6.jpg",
+    "image": "img_6.jpg",
     "name": "レボチロキシン(T₄)",
     "mechanism": "甲状腺機能低下症治療薬"
   },
   {
-    "image": "img/7.jpg",
+    "image": "img_7.jpg",
     "name": "ラロキシフェン",
     "mechanism": "第二世代SERM"
   },
   {
-    "image": "img/8.jpg",
+    "image": "img_8.jpg",
     "name": "エステラジオール",
     "mechanism": "卵胞ホルモン"
   },
   {
-    "image": "img/9.jpg",
+    "image": "img_9.jpg",
     "name": "タモキシフェン",
     "mechanism": "第一世代SERM"
   },
   {
-    "image": "img/10.jpg",
+    "image": "img_10.jpg",
     "name": "レボフロキサシン",
     "mechanism": "ニューキノロン系抗菌薬"
   },
   {
-    "image": "img/11.jpg",
+    "image": "img_11.jpg",
     "name": "クロルプロマジン",
     "mechanism": "フェノチアジン系統合失調症治療薬"
   },
   {
-    "image": "img/12.jpg",
+    "image": "img_12.jpg",
     "name": "フルタミド",
     "mechanism": "アンドロゲン受容体拮抗薬"
   },
   {
-    "image": "img/13.jpg",
+    "image": "img_13.jpg",
     "name": "アトルバスタチン",
     "mechanism": "HMG-CoA阻害薬"
   },
   {
-    "image": "img/14.jpg",
+    "image": "img_14.jpg",
     "name": "アセチルコリン",
     "mechanism": "副交感神経刺激薬"
   },
   {
-    "image": "img/15.jpg",
+    "image": "img_15.jpg",
     "name": "ピオグリタソン",
     "mechanism": "チアゾリジン系糖尿病治療薬"
   },
   {
-    "image": "img/16.jpg",
+    "image": "img_16.jpg",
     "name": "カルシトリオール",
     "mechanism": "活性型ビタミンD₃製剤"
   },
   {
-    "image": "img/17.jpg",
+    "image": "img_17.jpg",
     "name": "デュタステリド",
     "mechanism": "5α-還元酵素阻害薬"
   },
   {
-    "image": "img/18.jpg",
+    "image": "img_18.jpg",
     "name": "トリアゾラム",
     "mechanism": "ベンゾジアゼピン系抗不安薬"
   },
   {
-    "image": "img/19.jpg",
+    "image": "img_19.jpg",
     "name": "ルセオグリフロジン",
     "mechanism": "SGLT₂阻害薬"
   },
   {
-    "image": "img/20.jpg",
+    "image": "img_20.jpg",
     "name": "モルヒネ",
     "mechanism": "オピオイドμ受容体刺激薬"
   },
   {
-    "image": "img/21.jpg",
+    "image": "img_21.jpg",
     "name": "クロフィブラート",
     "mechanism": "フィブラート系脂質異常症治療薬"
   },
   {
-    "image": "img/22.jpg",
+    "image": "img_22.jpg",
     "name": "スルファメトキサゾール",
     "mechanism": "サルファ剤"
   },
   {
-    "image": "img/23.jpg",
+    "image": "img_23.jpg",
     "name": "トルブタミド",
     "mechanism": "スルホニル尿素系糖尿病治療薬"
   },
   {
-    "image": "img/24.jpg",
+    "image": "img_24.jpg",
     "name": "アレンドロン酸ナトリウム",
     "mechanism": "ビスホスホネート製剤"
   },
   {
-    "image": "img/25.jpg",
+    "image": "img_25.jpg",
     "name": "アドレナリン",
     "mechanism": "交感神経刺激薬"
   }
