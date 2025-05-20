@@ -42,6 +42,21 @@ img {
   display: none;
 }
 
+#restart-btn {
+  margin-top: 15px;
+  padding: 10px 20px;
+  background-color: #e34234;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+#restart-btn:hover {
+  background-color: #f25c4c;
+}
+
+
 @media screen and (max-width: 600px) {
   #question {
     font-size: 0.95rem;
