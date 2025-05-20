@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>構造式クイズ</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>構造式クイズ</h1>
+  <div id="mode-select">
+    <button onclick="startQuiz('name')">薬の名前を当てる</button>
+    <button onclick="startQuiz('mechanism')">作用機序を当てる</button>
+  </div>
+
+  <div id="quiz-area" class="hidden">
+    <img id="structure-img" src="" alt="構造式">
+    <div id="question"></div>
+    <div id="options"></div>
+    <button id="next-button" onclick="nextQuestion()">次の問題</button>
+  </div>
+
+  <script src="quiz.js"></script>
+</body>
+</html>
