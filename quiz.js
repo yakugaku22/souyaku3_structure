@@ -3,15 +3,19 @@ let currentIndex = 0;
 let currentMode = 'name';
 let score = 0;
 let answered = false;
+let wrongAnswers = [];
 
 function startQuiz(mode) {
   currentMode = mode;
   score = 0;
   currentIndex = 0;
   answered = false;
+  wrongAnswers = [];
   document.getElementById('mode-select').classList.add('hidden');
   document.getElementById('quiz-area').classList.remove('hidden');
   document.getElementById('result').classList.add('hidden');
+  document.getElementById('restart-btn').classList.add('hidden');
+  document.getElementById('review-btn').classList.add('hidden');
   document.getElementById('feedback').textContent = "";
   fetch('quiz.json')
     .then(res => res.json())
@@ -42,7 +46,7 @@ function showQuestion() {
     btn.textContent = option;
     btn.style.fontSize = "0.95rem";
     btn.onclick = () => {
-      if (answered) return; // すでに答えていたら無効
+      if (answered) return;
       answered = true;
 
       if (option === correctAnswer) {
@@ -50,9 +54,9 @@ function showQuestion() {
         score++;
       } else {
         document.getElementById('feedback').textContent = `不正解... 正解は：${correctAnswer}`;
+        wrongAnswers.push(quiz);
       }
 
-      // ボタン無効化
       Array.from(optionsDiv.children).forEach(b => b.disabled = true);
     };
     optionsDiv.appendChild(btn);
@@ -76,7 +80,31 @@ function showResult() {
   document.getElementById('quiz-area').classList.add('hidden');
   document.getElementById('result').classList.remove('hidden');
   document.getElementById('restart-btn').classList.remove('hidden');
-  document.getElementById('result').textContent = `解いてくれてありがとう！${quizData.length}問中${score}問正解でした。`;
+  document.getElementById('review-btn').classList.toggle('hidden', wrongAnswers.length === 0);
+  document.getElementById('result').textContent =
+    `解いてくれてありがとう！${quizData.length}問中${score}問正解でした。`;
+}
+
+function startReview() {
+  if (wrongAnswers.length === 0) return;
+  quizData = [...wrongAnswers];
+  currentIndex = 0;
+  score = 0;
+  answered = false;
+  wrongAnswers = [];
+  document.getElementById('result').classList.add('hidden');
+  document.getElementById('restart-btn').classList.add('hidden');
+  document.getElementById('review-btn').classList.add('hidden');
+  document.getElementById('quiz-area').classList.remove('hidden');
+  document.getElementById('feedback').textContent = '';
+  showQuestion();
+}
+
+function goToStart() {
+  document.getElementById('mode-select').classList.remove('hidden');
+  document.getElementById('result').classList.add('hidden');
+  document.getElementById('restart-btn').classList.add('hidden');
+  document.getElementById('review-btn').classList.add('hidden');
 }
 
 function generateOptions(correct, all) {
@@ -95,10 +123,3 @@ function shuffleArray(array) {
   }
   return array;
 }
-
-function goToStart() {
-  document.getElementById('mode-select').classList.remove('hidden');
-  document.getElementById('result').classList.add('hidden');
-  document.getElementById('restart-btn').classList.add('hidden');
-}
-
