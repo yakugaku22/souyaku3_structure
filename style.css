@@ -65,4 +65,19 @@ img {
   #options button {
     font-size: 0.9rem;
   }
+
+  h1 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  white-space: nowrap; /* 改行させない */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  }
+
+@media screen and (max-width: 500px) {
+  h1 {
+    font-size: 1.3rem; /* スマホ時に小さくする */
+   }
+  }
+
 }
