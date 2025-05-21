@@ -1,15 +1,18 @@
 let quizData;
+let allData; // 元のデータを保存
 let currentIndex = 0;
 let currentMode = 'name';
 let score = 0;
 let answered = false;
 let wrongAnswers = [];
+let isReviewMode = false;
 
 function startQuiz(mode) {
   currentMode = mode;
   score = 0;
   currentIndex = 0;
   answered = false;
+  isReviewMode = false;
   wrongAnswers = [];
   document.getElementById('mode-select').classList.add('hidden');
   document.getElementById('quiz-area').classList.remove('hidden');
@@ -17,10 +20,12 @@ function startQuiz(mode) {
   document.getElementById('restart-btn').classList.add('hidden');
   document.getElementById('review-btn').classList.add('hidden');
   document.getElementById('feedback').textContent = "";
+
   fetch('quiz.json')
     .then(res => res.json())
     .then(data => {
-      quizData = data;
+      allData = data;
+      quizData = [...allData];
       shuffleArray(quizData);
       showQuestion();
     });
@@ -33,7 +38,7 @@ function showQuestion() {
     currentMode === 'name' ? 'この構造式の薬の名前は？' : 'この薬の作用機序は？';
 
   const correctAnswer = currentMode === 'name' ? quiz.name : quiz.mechanism;
-  const allAnswers = quizData.map(q => currentMode === 'name' ? q.name : q.mechanism);
+  const allAnswers = allData.map(q => currentMode === 'name' ? q.name : q.mechanism);
   const options = generateOptions(correctAnswer, allAnswers);
 
   const optionsDiv = document.getElementById('options');
@@ -81,7 +86,7 @@ function showResult() {
   document.getElementById('result').classList.remove('hidden');
   document.getElementById('restart-btn').classList.remove('hidden');
   document.getElementById('review-btn').classList.toggle('hidden', wrongAnswers.length === 0);
-  document.getElementById('result').textContent = `解いてくれてありがとう！${quizData.length}問中${score}問正解でした。`;
+  document.getElementById('result').textContent = `${quizData.length}問中${score}問正解でした。テスト頑張ろうね☺`;
 }
 
 function startReview() {
@@ -90,7 +95,8 @@ function startReview() {
   currentIndex = 0;
   score = 0;
   answered = false;
-  wrongAnswers = [];
+  isReviewMode = true;
+  wrongAnswers = []; // 新しい間違いだけ記録（上書きではなく積み増ししたいならここを消す）
   document.getElementById('result').classList.add('hidden');
   document.getElementById('restart-btn').classList.add('hidden');
   document.getElementById('review-btn').classList.add('hidden');
@@ -100,10 +106,19 @@ function startReview() {
 }
 
 function goToStart() {
+  // すべて初期状態に戻す
+  quizData = [...allData];
+  currentIndex = 0;
+  score = 0;
+  answered = false;
+  wrongAnswers = [];
+  isReviewMode = false;
   document.getElementById('mode-select').classList.remove('hidden');
   document.getElementById('result').classList.add('hidden');
   document.getElementById('restart-btn').classList.add('hidden');
   document.getElementById('review-btn').classList.add('hidden');
+  document.getElementById('quiz-area').classList.add('hidden');
+  document.getElementById('feedback').textContent = '';
 }
 
 function generateOptions(correct, all) {
