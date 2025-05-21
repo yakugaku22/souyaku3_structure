@@ -81,8 +81,7 @@ function showResult() {
   document.getElementById('result').classList.remove('hidden');
   document.getElementById('restart-btn').classList.remove('hidden');
   document.getElementById('review-btn').classList.toggle('hidden', wrongAnswers.length === 0);
-  document.getElementById('result').textContent =
-    `解いてくれてありがとう！${quizData.length}問中${score}問正解でした。`;
+  document.getElementById('result').textContent = `解いてくれてありがとう！${quizData.length}問中${score}問正解でした。`;
 }
 
 function startReview() {
