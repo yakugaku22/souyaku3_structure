@@ -123,5 +123,130 @@
     "image": "img_25.jpg",
     "name": "アドレナリン",
     "mechanism": "交感神経刺激薬"
+  },
+  {
+    "image": "img_26.jpg",
+    "name": "パクリタキセル",
+    "mechanism": "タキサン系微小管阻害薬"
+  },
+  {
+    "image": "img_27.jpg",
+    "name": "ジドブジン",
+    "mechanism": "逆転写酵素阻害薬"
+  },
+  {
+    "image": "img_28.jpg",
+    "name": "ストレプトマイシン",
+    "mechanism": "アミノグリコシド系抗菌薬"
+  },
+  {
+    "image": "img_29.jpg",
+    "name": "ボルテゾミブ",
+    "mechanism": "プロテアソーム阻害薬"
+  },
+  {
+    "image": "img_30.jpg",
+    "name": "ミコナゾール",
+    "mechanism": "アゾール系抗真菌薬"
+  },
+  {
+    "image": "img_31.jpg",
+    "name": "バンコマイシン",
+    "mechanism": "グリコペプチド系抗菌薬"
+  },
+  {
+    "image": "img_32.jpg",
+    "name": "エリスロマイシン",
+    "mechanism": "マクロライド系抗菌薬"
+  },
+  {
+    "image": "img_33.jpg",
+    "name": "ドキソルビシン",
+    "mechanism": "インターカレーター"
+  },
+  {
+    "image": "img_34.jpg",
+    "name": "ブレオマイシン",
+    "mechanism": "DNA鎖を切断する抗悪性腫瘍薬"
+  },
+  {
+    "image": "img_35.jpg",
+    "name": "ビンブラスチン",
+    "mechanism": "ビスインドールアルカロイド系微小管阻害薬"
+  },
+  {
+    "image": "img_36.jpg",
+    "name": "ニムスチン",
+    "mechanism": "ニトロソウレア系アルキル化剤"
+  },
+  {
+    "image": "img_37.jpg",
+    "name": "アクシロビル",
+    "mechanism": "抗ヘルペスウイルス薬"
+  },
+  {
+    "image": "img_38.jpg",
+    "name": "アズトレオナム",
+    "mechanism": "モノバクタム系抗菌薬"
+  },
+  {
+    "image": "img_39.jpg",
+    "name": "クロラムフェニコール",
+    "mechanism": "クロラムフェニコール系抗菌薬"
+  },
+  {
+    "image": "img_40.jpg",
+    "name": "オセルタミビル",
+    "mechanism": "抗インフルエンザウイルス薬"
+  },
+  {
+    "image": "img_41.jpg",
+    "name": "マイトマイシンC",
+    "mechanism": "DNA間に架橋形成する抗腫瘍薬"
+  },
+  {
+    "image": "img_42.jpg",
+    "name": "メトトレキサート",
+    "mechanism": "ジヒドロ葉酸還元酵素阻害薬"
+  },
+  {
+    "image": "img_43.jpg",
+    "name": "セフジニル",
+    "mechanism": "セフェム系抗菌薬"
+  },
+  {
+    "image": "img_44.jpg",
+    "name": "イリノテカン",
+    "mechanism": "トポイソメラーぜ阻害薬"
+  },
+  {
+    "image": "img_45.jpg",
+    "name": "テトラサイクリン",
+    "mechanism": "テトラサイクリン系抗菌薬"
+  },
+  {
+    "image": "img_46.jpg",
+    "name": "イミペネム",
+    "mechanism": "カルバペネム系抗菌薬"
+  },
+  {
+    "image": "img_47.jpg",
+    "name": "フルオロウラシル",
+    "mechanism": "チミジル酸合成酵素阻害薬"
+  },
+  {
+    "image": "img_48.jpg",
+    "name": "シクロホスファミド",
+    "mechanism": "マスタード系アルキル化剤"
+  },
+  {
+    "image": "img_49.jpg",
+    "name": "シスプラチン",
+    "mechanism": "DNAに白金架橋を形成する抗悪性腫瘍薬"
+  },
+  {
+    "image": "img_50.jpg",
+    "name": "ホスホマイシンNa",
+    "mechanism": "ホスホマイシン系抗菌薬"
   }
 ]
